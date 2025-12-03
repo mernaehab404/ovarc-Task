@@ -2,10 +2,11 @@
 import React from 'react';
 import Loading from '../pages/Loading';
 import AuthorCard from '../components/Cards/AuthorCard';
-import useLibraryData from '../hooks/useLibraryData';
+import useLibraryDataWithMock from '../hooks/useLibraryDataWithMock';
 
 const BrowseAuthors = () => {
-  const { authors, books, isLoading } = useLibraryData();
+  // const { authors, books, isLoading } = useLibraryData();
+  const { authors, books, isLoading } = useLibraryDataWithMock();
 
   // Calculate the number of books per author
   const authorsWithBookCount = React.useMemo(() => {

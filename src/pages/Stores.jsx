@@ -17,7 +17,7 @@ const Stores = () => {
 
   // State declarations
   const [stores, setStores] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, ] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
   const [editingRowId, setEditingRowId] = useState(null);
   const [editName, setEditName] = useState('');
@@ -216,6 +216,8 @@ const Stores = () => {
     closeModal();
   };
   const onRowClick = (e, rw) => {
+ 
+    
     handleViewStoreInventory(rw.id);
 }
   return (

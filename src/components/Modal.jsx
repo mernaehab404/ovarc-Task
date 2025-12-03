@@ -9,7 +9,9 @@ const Modal = (
         title,
         save,
         cancel,
-        children
+        children,
+        saveButtonText = "Submit",
+        saveButtonDisabled = false
     }
 ) => {
     return (
@@ -25,14 +27,16 @@ const Modal = (
                     <button
                         onClick={cancel}
                         className="text-main border border-main bg-white px-3 py-1.5 rounded"
+                        disabled={saveButtonDisabled}
                     >
                         Cancel
                     </button>
                     <button
                         onClick={save}
-                        className="bg-main text-white px-3 py-1.5 rounded"
+                        className={`${saveButtonDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-main hover:bg-main-dark'} text-white px-3 py-1.5 rounded`}
+                        disabled={saveButtonDisabled}
                     >
-                        Submit
+                        {saveButtonText}
                     </button>
                 </div>
             </div>

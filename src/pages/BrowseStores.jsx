@@ -2,10 +2,11 @@
 import React from 'react';
 import Loading from '../pages/Loading';
 import StoreCard from '../components/Cards/StoreCard';
-import useLibraryData from '../hooks/useLibraryData';
+import useLibraryDataWithMock from '../hooks/useLibraryDataWithMock';
 
 const BrowseStores = () => {
-  const { stores, inventory, isLoading } = useLibraryData();
+  // const { stores, inventory, isLoading } = useLibraryData();
+  const { stores, inventory, isLoading } = useLibraryDataWithMock();
 
   // Calculate metrics for each store
   const storesWithMetrics = React.useMemo(() => {

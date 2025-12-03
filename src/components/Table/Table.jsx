@@ -8,6 +8,7 @@ export default function Table({ data, columns,onRowClick}) {
     pageSize: 10
   });
   const [sorting, setSorting] = useState([]);
+  console.log(data);
   
   // Add skip reset ref
   const skipPageResetRef = useRef(false);
@@ -61,11 +62,7 @@ export default function Table({ data, columns,onRowClick}) {
     autoResetFilters: !skipPageResetRef.current,
   });
 
-  // Helper function to update data while preserving pagination
-  const updateData = (newData) => {
-    skipPageResetRef.current = true;
-    setData(newData);
-  };
+
 
   // Pagination controls
   const pageCount = table.getPageCount();

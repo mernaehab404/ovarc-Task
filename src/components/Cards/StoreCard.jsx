@@ -1,16 +1,17 @@
 // src/components/StoreCard.jsx
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const StoreCard = ({ name, noOfBooks, averagePrice, id }) => {
-    
-    const navigate = useNavigate();
-  return ( 
+  const navigate = useNavigate();
+  return (
     <div className="bg-white shadow-md rounded-lg p-4 h-[214px] w-112 flex gap-2">
       {/* Store Placeholder (instead of an image) */}
       <div
         className="grid items-center h-full w-32 rounded-lg"
-        style={{ backgroundColor: '#E0F7FA' }} // Light cyan background
+        style={{ backgroundColor: "#E0F7FA" }} // Light cyan background
       >
-        <p className="text-center font-medium text-gray-800 text-wrap px-2">{name}</p>
+        <p className="text-center font-medium text-gray-800 text-wrap px-2">
+          {name}
+        </p>
       </div>
 
       {/* Store Details */}
@@ -19,18 +20,16 @@ const StoreCard = ({ name, noOfBooks, averagePrice, id }) => {
           <p className="text-wrap text-lg font-bold text-gray-800">{name}</p>
           <p className="text-sm text-main">Books in stock: {noOfBooks}</p>
           <p className="text-sm text-main">
-            Average Price: ${averagePrice.toFixed(2)}
+            Average Price: ${averagePrice}
           </p>
         </div>
 
         <div className="flex justify-end items-end">
-          <button className="bg-main font-light text-white px-2 py-1 rounded"
-            onClick={
-                () => {
-                    navigate(`/store/${id}`);
-                   
-                }
-            }
+          <button
+            className="bg-main font-light text-white px-2 py-1 rounded"
+            onClick={() => {
+              navigate(`/store/${id}`);
+            }}
           >
             View Store
           </button>
